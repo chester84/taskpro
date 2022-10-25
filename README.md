@@ -6,6 +6,8 @@
 
 ## goroutine channel
 
+## close channels gracefully
+
 ## produce consume
 
 ## usage
