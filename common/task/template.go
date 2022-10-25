@@ -105,7 +105,7 @@ func consumeTemplateQueue(wg *sync.WaitGroup, workerID int) {
 		}
 
 		qValue, err := redis.String(storageClient.Do("RPOP", queueName))
-		if err != nil {
+		if err != nil && err != redis.ErrNil {
 			logs.Error("[consumeTemplateQueue] RPOP error workID:%d, err:%v", workerID, err)
 		}
 
